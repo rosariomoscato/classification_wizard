@@ -3,13 +3,14 @@ import pandas as pd
 #from sqlalchemy import Table, Column, String, MetaData
 #import psycopg2
 import streamlit as st
-from streamlit.hashing import _CodeHasher
-from streamlit.report_thread import get_report_ctx
-from streamlit.server.server import Server
+#from streamlit.hashing import _CodeHasher
+#from streamlit.report_thread import get_report_ctx
+#from streamlit.server.server import Server
 import os
 import base64
 from datetime import datetime
 
+"""
 def insert_row(session_id,engine):
     if engine.execute("SELECT session_id FROM session_state WHERE session_id = '%s'" % (session_id)).fetchone() is None:
             engine.execute("""INSERT INTO session_state (session_id) VALUES ('%s')""" % (session_id))
@@ -29,6 +30,8 @@ def get_session():
     session_id = '_id_' + session_id
 
     return session_info.session, session_id
+"""
+
 
 def download(df,filename): # Downloading DataFrame
     csv = df.to_csv(index=False)
