@@ -133,7 +133,7 @@ def lr_main():
             'warm_start':[warm_start], 'l1_ratio':[l1_ratio]}
 
             st.subheader('Download hyperparameters')
-            st.markdown(download(pd.DataFrame(hyperparameters),'MLWizard - Logistic Regression Classifier - Hyperparameters'), unsafe_allow_html=True)
+            st.markdown(download(pd.DataFrame(hyperparameters),'Classification Wizard - Logistic Regression Classifier - Hyperparameters'), unsafe_allow_html=True)
 
             st.sidebar.subheader('Test Dataset')
             status_test, df_test = file_upload('Please upload a test dataset')
@@ -151,7 +151,7 @@ def lr_main():
 
                     st.subheader('Predicted Labels')
                     st.write(X_pred)
-                    st.markdown(download(X_pred,'MLWizard - Logistic Regression Classifier - Predicted Labels'), unsafe_allow_html=True)
+                    st.markdown(download(X_pred,'Classification Wizard - Logistic Regression Classifier - Predicted Labels'), unsafe_allow_html=True)
                 except:
                     st.warning('Please upload a test dataset with the same feature set as the training dataset')
 
