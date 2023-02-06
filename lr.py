@@ -170,7 +170,7 @@ def lr_main():
     # Per scaricare un sample dataset    
     st.sidebar.subheader('Sample Dataset')
     if st.sidebar.button('Download sample dataset'):
-        url = 'https://raw.githubusercontent.com/mkhorasani/dummylearn_datasets/main/data.csv'
+        url = 'https://raw.githubusercontent.com/rosariomoscato/classification_wizard/main/sample_datasets/diabetes_dataset_train.csv'
         csv = pd.read_csv(url)
         st.sidebar.markdown(download(csv,'sample_dataset'), unsafe_allow_html=True)
 
