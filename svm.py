@@ -133,7 +133,7 @@ def svm_main():
             'break_ties':[break_ties], 'random_state':[random_state]}
 
             st.subheader('Download hyperparameters')
-            st.markdown(download(pd.DataFrame(hyperparameters),'DummyLearn.com - Support Vector Machine Classifier - Hyperparameters'), unsafe_allow_html=True)
+            st.markdown(download(pd.DataFrame(hyperparameters),'Classification Wizard - Support Vector Machine Classifier - Hyperparameters'), unsafe_allow_html=True)
 
             st.sidebar.subheader('Test Dataset')
             status_test, df_test = file_upload('Please upload a test dataset')
@@ -151,7 +151,7 @@ def svm_main():
 
                     st.subheader('Predicted Labels')
                     st.write(X_pred)
-                    st.markdown(download(X_pred,'DummyLearn.com - Support Vector Machine Classifier - Predicted Labels'), unsafe_allow_html=True)
+                    st.markdown(download(X_pred,'Classification Wizard - Support Vector Machine Classifier - Predicted Labels'), unsafe_allow_html=True)
                 except:
                     st.warning('Please upload a test dataset with the same feature set as the training dataset')
 
