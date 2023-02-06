@@ -1,4 +1,4 @@
-# Importing Packages 
+# Importing Packages
 import streamlit as st
 from PIL import Image
 
@@ -11,12 +11,10 @@ from svm import svm_main
 
 #Page Setup
 icon = Image.open('favicon.jpeg')
-st.set_page_config(
-    layout="centered",
-    initial_sidebar_state="expanded",
-    page_title='ML Wizard',
-    page_icon=icon
-)
+st.set_page_config(layout="centered",
+                   initial_sidebar_state="expanded",
+                   page_title='Classification Wizard',
+                   page_icon=icon)
 
 #Hiding Menu, Header and Footer
 hide_st_style = """
@@ -33,24 +31,23 @@ image = Image.open('Class_logo.png')
 st.sidebar.image(image)
 
 #Main Menu Selection
-ml_module_selection =  st.sidebar.selectbox('Select Classifier',['Logistic Regression Classifier',
-                                                              'Decision Tree Classifier',
-                                                              'K-Nearest Neighbors Classifier',
-                                                              'Naive Bayes Classifier',
-                                                              'Support Vector Machine Classifier'])
+ml_module_selection = st.sidebar.selectbox('Select Classifier', [
+  'Logistic Regression Classifier', 'Decision Tree Classifier',
+  'K-Nearest Neighbors Classifier', 'Naive Bayes Classifier',
+  'Support Vector Machine Classifier'
+])
 
+if ml_module_selection == "Logistic Regression Classifier":
+  lr_main()
 
-if ml_module_selection =="Logistic Regression Classifier":
-    lr_main()
+elif ml_module_selection == "Decision Tree Classifier":
+  dt_main()
 
-elif ml_module_selection =="Decision Tree Classifier":
-    dt_main()
+elif ml_module_selection == "K-Nearest Neighbors Classifier":
+  knn_main()
 
-elif ml_module_selection =="K-Nearest Neighbors Classifier":
-    knn_main()
-
-elif ml_module_selection =="Naive Bayes Classifier":
-    nb_main()
+elif ml_module_selection == "Naive Bayes Classifier":
+  nb_main()
 
 else:
-    svm_main()
+  svm_main()
