@@ -151,7 +151,7 @@ def lr_main():
 
                     st.subheader('Predicted Labels')
                     st.write(X_pred)
-                    st.markdown(download(X_pred,'MLWiard - Logistic Regression Classifier - Predicted Labels'), unsafe_allow_html=True)
+                    st.markdown(download(X_pred,'MLWizard - Logistic Regression Classifier - Predicted Labels'), unsafe_allow_html=True)
                 except:
                     st.warning('Please upload a test dataset with the same feature set as the training dataset')
 
