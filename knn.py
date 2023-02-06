@@ -104,7 +104,7 @@ def knn_main():
             'leaf_size':[leaf_size],'p':[p], 'metric':[metric]}
 
             st.subheader('Download hyperparameters')
-            st.markdown(download(pd.DataFrame(hyperparameters),'MLWizard - K-Nearest Neighbors Classifier - Hyperparameters'), unsafe_allow_html=True)
+            st.markdown(download(pd.DataFrame(hyperparameters),'Classification Wizard - K-Nearest Neighbors Classifier - Hyperparameters'), unsafe_allow_html=True)
 
             st.sidebar.subheader('Test Dataset')
             status_test, df_test = file_upload('Please upload a test dataset')
@@ -123,7 +123,7 @@ def knn_main():
                     st.subheader('Predicted Labels')
                     st.write(X_pred)
 
-                    st.markdown(download(X_pred,'MLWizard - K-Nearest Neighbors Classifier - Predicted Labels'), unsafe_allow_html=True)
+                    st.markdown(download(X_pred,'Classification Wizard - K-Nearest Neighbors Classifier - Predicted Labels'), unsafe_allow_html=True)
                 except:
                     st.warning('Please upload a test dataset with the same feature set as the training dataset')
 
