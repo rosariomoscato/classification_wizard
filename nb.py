@@ -96,7 +96,7 @@ def nb_main():
             hyperparameters = {'var_smoothing':[var_smoothing]}
 
             st.subheader('Download hyperparameters')
-            st.markdown(download(pd.DataFrame(hyperparameters),'DummyLearn.com - Naive Bayes Classifier - Hyperparameters'), unsafe_allow_html=True)
+            st.markdown(download(pd.DataFrame(hyperparameters),'Classification Wizard - Naive Bayes Classifier - Hyperparameters'), unsafe_allow_html=True)
 
             st.sidebar.subheader('Test Dataset')
             status_test, df_test = file_upload('Please upload a test dataset')
@@ -115,7 +115,7 @@ def nb_main():
                     st.subheader('Predicted Labels')
                     st.write(X_pred)
 
-                    st.markdown(download(X_pred,'DummyLearn.com - Naive Bayes Classifier - Predicted Labels'), unsafe_allow_html=True)
+                    st.markdown(download(X_pred,'Classification Wizard - Naive Bayes Classifier - Predicted Labels'), unsafe_allow_html=True)
 
                 except:
                     st.warning('Please upload a test dataset with the same feature set as the training dataset')
