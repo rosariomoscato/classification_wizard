@@ -46,7 +46,7 @@ def dt_main():
     st.sidebar.subheader('Training Dataset')
     status, df = file_upload('Please upload a training dataset')
 
-    _, session_id = get_session()
+    #_, session_id = get_session()
 
     if status == True:
 
