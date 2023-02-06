@@ -16,7 +16,7 @@ from Utils import *
 def confusion_matrix_plot(data, labels):
   z = data.tolist()[::-1]
   x = labels
-  y = labels
+  y = labels[::-1]
   z_text = z
 
   fig = ff.create_annotated_heatmap(z,
@@ -43,8 +43,6 @@ def knn_main():
 
   st.sidebar.subheader('Training Dataset')
   status, df = file_upload('Please upload a training dataset')
-
-  #_, session_id = get_session()
 
   if status == True:
     col_names = list(df)

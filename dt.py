@@ -15,7 +15,7 @@ from Utils import *
 def confusion_matrix_plot(data,labels):
     z = data.tolist()[::-1]
     x = labels
-    y = labels
+    y = labels[::-1]
     z_text = z
 
     fig = ff.create_annotated_heatmap(z, x, y, annotation_text=z_text, text=z,hoverinfo='text',colorscale='Blackbody')
@@ -30,18 +30,11 @@ def roc_plot(data):
 
     st.write(fig)
 
-# def dt_viz(X,y,label_name,model,feature_cols,class_names):
-#     class_names = [str(x) for x in class_names]
-#     viz = dtreeviz(model, X, y, target_name=label_name,feature_names=feature_cols, class_names=class_names)
-#     st.image(viz._repr_svg_(), use_column_width=True)
-
 
 def dt_main():
 
     st.sidebar.subheader('Training Dataset')
     status, df = file_upload('Please upload a training dataset')
-
-    #_, session_id = get_session()
 
     if status == True:
 

@@ -16,7 +16,7 @@ from Utils import *
 def confusion_matrix_plot(data, labels):
   z = data.tolist()[::-1]
   x = labels
-  y = labels
+  y = labels[::-1]
   z_text = z
 
   fig = ff.create_annotated_heatmap(z,
@@ -43,8 +43,6 @@ def lr_main():
 
   st.sidebar.subheader('Training Dataset')
   status, df = file_upload('Please upload a training dataset')
-
-  # _, session_id = get_session()
 
   if status == True:
 
@@ -119,7 +117,6 @@ def lr_main():
       cnf_matrix = metrics.confusion_matrix(y_test, y_pred)
 
       st.subheader('Confusion Matrix')
-      #confusion_matrix_plot(cnf_matrix)
       confusion_matrix_plot(cnf_matrix, list(df[label_col].unique()))
 
       accuracy = metrics.accuracy_score(y_test, y_pred)
