@@ -120,13 +120,11 @@ def dt_main():
 
             #Download hyperparameters
             hyperparameters = {'criterion':[criterion], 'splitter':[splitter], 'max_depth':[max_depth],
-            'min_samples_split':[min_samples_split],'min_samples_leaf':[min_samples_leaf],
-            'min_weight_fraction_leaf':[min_weight_fraction_leaf],'max_features':[max_features],
-            'random_state':[random_state], 'max_leaf_nodes':[max_leaf_nodes],'min_impurity_decrease':[min_impurity_decrease],
-            'min_impurity_split':[min_impurity_split], 'class_weight':[class_weight],'ccp_alpha':[ccp_alpha]}
+            'min_samples_split':[min_samples_split],'max_features':[max_features],
+            'random_state':[random_state]}
 
             st.subheader('Download hyperparameters')
-            st.markdown(download(pd.DataFrame(hyperparameters),'DummyLearn.com - Decision Tree Classifier - Hyperparameters'), unsafe_allow_html=True)
+            st.markdown(download(pd.DataFrame(hyperparameters),'Classification Wizard - Decision Tree Classifier - Hyperparameters'), unsafe_allow_html=True)
 
             st.sidebar.subheader('Test Dataset')
             status_test, df_test = file_upload('Please upload a test dataset')
@@ -144,7 +142,7 @@ def dt_main():
 
                     st.subheader('Predicted Labels')
                     st.write(X_pred)
-                    st.markdown(download(X_pred,'DummyLearn.com - Decision Tree Classifier - Predicted Labels'), unsafe_allow_html=True)
+                    st.markdown(download(X_pred,'Classification Wizard - Decision Tree Classifier - Predicted Labels'), unsafe_allow_html=True)
                 except:
                     st.warning('Please upload a test dataset with the same feature set as the training dataset')
 
