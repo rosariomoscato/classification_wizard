@@ -127,11 +127,7 @@ def knn_main():
       }
 
       st.subheader('Download hyperparameters')
-      st.markdown(download(
-        pd.DataFrame(hyperparameters),
-        'Classification Wizard - K-Nearest Neighbors Classifier - Hyperparameters'
-      ),
-                  unsafe_allow_html=True)
+      st.markdown(download(pd.DataFrame(hyperparameters),'Classification Wizard - K-Nearest Neighbors Classifier - Hyperparameters'),unsafe_allow_html=True)
 
       st.sidebar.subheader('Test Dataset')
       status_test, df_test = file_upload('Please upload a test dataset')
