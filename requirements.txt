@@ -1,4 +1,3 @@
-psycopg2
 plotly
 streamlit
 scikit_learn
